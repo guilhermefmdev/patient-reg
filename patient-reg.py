@@ -9,15 +9,19 @@ class Patient:
 
 
 def get_patient_information():
-    name = input("Insira o nome do paciente: ")
-    while True:
-        try:
-            age = int(input("Insira a idade do paciente: "))
-            break
-        except ValueError:
-            print("A idade deve ser um número inteiro válido.")
-    is_new = input("É a primeira vez?(s/n): ").lower() == 's'
-    return name, age, is_new
+    try:
+        name = input("Insira o nome do paciente: ")
+        while True:
+            try:
+                age = int(input("Insira a idade do paciente: "))
+                break
+            except ValueError:
+                print("A idade deve ser um número inteiro válido.")
+        is_new = input("É a primeira vez?(s/n): ").lower() == 's'
+        return name, age, is_new
+    except KeyboardInterrupt:
+        print("\nOperação interrompida pelo usuário.")
+        exit(1)
 
 
 name, age, is_new = get_patient_information()
