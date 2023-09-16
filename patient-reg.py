@@ -16,7 +16,7 @@ def get_patient_information():
             break
         except ValueError:
             print("A idade deve ser um número inteiro válido.")
-    is_new = input("É a primeira vez? (s/n): ").lower() == 's'
+    is_new = input("É a primeira vez?(s/n): ").lower() == 's'
     return name, age, is_new
 
 
