@@ -14,16 +14,22 @@ def get_patient_information():
         while True:
             try:
                 age = int(input("Insira a idade do paciente: "))
-                break
+                if age <= 0:
+                    print("A idade deve ser um número inteiro positivo")
+                else:
+                    break
             except ValueError:
                 print("A idade deve ser um número inteiro válido.")
+
         is_new = input("É a primeira vez?(s/n): ").lower() == 's'
         return name, age, is_new
+
     except KeyboardInterrupt:
         print("\nOperação interrompida pelo usuário.")
         exit(1)
 
 
-name, age, is_new = get_patient_information()
-patient = Patient(name, age, is_new)
-print(patient)
+if __name__ == "__main__":
+    name, age, is_new = get_patient_information()
+    patient = Patient(name, age, is_new)
+    print(patient)
