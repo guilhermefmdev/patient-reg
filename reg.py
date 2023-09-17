@@ -8,7 +8,7 @@ class Patient:
     def __str__(self):
         return f"• {self.name}({self.age} anos, primeira visita: {self.is_new}) \n- Medicamentos em uso: {self.med}"
 
-
+# verifica se os valores(números) inseridos são positivos e inteiros
 def get_integer_input(prompt):
     while True:
         try:
@@ -20,7 +20,7 @@ def get_integer_input(prompt):
         except ValueError:
             print("A idade deve ser um número inteiro positivo")
 
-
+# verifica o valor inserido e retorna True ou False (se for válido)
 def get_yes_no_input(prompt):
     while True:
         response = input(prompt).lower()
@@ -31,7 +31,7 @@ def get_yes_no_input(prompt):
         else:
             print("Por favor, responda com 'sim' ou 'não' (ou variações).")
 
-
+# verifica se há e se os medicamentos inseridos são válidos (ValueError)
 def get_med_info(prompt):
     res = get_yes_no_input(prompt)
     if res:
@@ -44,7 +44,7 @@ def get_med_info(prompt):
 
     return med
 
-
+# recebe os valores primários do paciente
 def get_patient_information():
     try:
         name = input("Insira o nome do paciente: ").title()
