@@ -10,7 +10,7 @@ class Patient:
 
 def get_patient_information():
     try:
-        name = input("Insira o nome do paciente: ")
+        name = input("Insira o nome do paciente: ").title()
         while True:
             try:
                 age = int(input("Insira a idade do paciente: "))
