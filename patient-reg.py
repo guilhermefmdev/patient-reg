@@ -21,7 +21,16 @@ def get_patient_information():
             except ValueError:
                 print("A idade deve ser um número inteiro válido.")
 
-        is_new = input("É a primeira vez?(s/n): ").lower() == 's'
+        while True:
+            is_new_response = input("É a primeira vez?(s/n): ").lower()
+            if is_new_response in ["sim", "s", "yes", "y"]:
+                is_new = True
+                break
+            elif is_new_response in ["não", "n", "no"]:
+                is_new = False
+                break
+            else:
+                print("Por favor, responda com 'sim' ou 'não' (ou variações).")
         return name, age, is_new
 
     except KeyboardInterrupt:
