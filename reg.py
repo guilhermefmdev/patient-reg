@@ -35,7 +35,7 @@ def get_yes_no_input(prompt):
         else:
             print("Por favor, responda com 'sim' ou 'não' (ou variações).")
 
-# verifica se há e se os medicamentos inseridos são válidos (ValueError)
+# verifica se há e se o tipo dos valores inseridos são válidos (medicamentos)
 def get_med_info(prompt):
     res = get_yes_no_input(prompt)
     if res:
@@ -48,7 +48,7 @@ def get_med_info(prompt):
 
     return med
 
-
+# verifica se há e se o tipo dos valores inseridos são válidos (doenças autoimunes)
 def get_dis_info(prompt):
     res = get_yes_no_input(prompt)
     if res:
