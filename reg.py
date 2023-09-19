@@ -30,7 +30,7 @@ def get_yes_no_input(prompt):
         response = input(prompt).lower()
         if response in ["sim", "s", "yes", "y"]:
             return True
-        elif response in ["não", "n", "no"]:
+        elif response in ["não", "n", "no", "nao"]:
             return False
         else:
             print("Por favor, responda com 'sim' ou 'não' (ou variações).")
